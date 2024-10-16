@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart'; // Importar o provider
-import 'package:swimcalculator/swimcalculatorapp.dart';
+import 'package:swimcalculator/swimcalculatoapp.dart';
 void main() {
   runApp(SwimCalculatorApp());
 }
