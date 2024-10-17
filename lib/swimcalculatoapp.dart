@@ -177,4 +177,217 @@ void _saveToSaves(String title) async {
       setState(() {}); // Atualiza o estado ao voltar
     });
   }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Swim Calculator Pace',
+          style: TextStyle(fontSize: 20),
+        ),
+      ),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Container(
+                width: 340,
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        const Icon(Icons.pool, size: 40, color: Colors.black),
+                        const SizedBox(width: 8),
+                        Expanded(child: _buildTimeFields()),
+                      ],
+                    ),
+                    const SizedBox(height: 16),
+                    _buildDistanceSection(),
+                    const SizedBox(height: 16),
+                    _buildPaceSection(),
+                    const SizedBox(height: 16),
+                    _buildSpeedSection(),
+                    const SizedBox(height: 16),
+                    ElevatedButton(
+                      onPressed: canSave ? _showTitleDialog : null,
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: canSave ? Colors.blue : Colors.grey,
+                      ),
+                      child: const Text('Salvar'),
+                    ),
+                  ],
+                ),
+              ),
+              const SizedBox(height: 24), // Espaçamento entre a calculadora e os ícones
+              _buildIconButtons(),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTimeFields() {
+    return Row(
+      children: [
+        Expanded(child: _buildTimeField(hoursController, 'Hour')),
+        const SizedBox(width: 4),
+        Expanded(child: _buildTimeField(minutesController, 'Minutes')),
+        const SizedBox(width: 4),
+        Expanded(child: _buildTimeField(secondsController, 'Seconds')),
+      ],
+    );
+  }
+
+  Widget _buildTimeField(TextEditingController controller, String hint) {
+    return TextField(
+      controller: controller,
+      textAlign: TextAlign.center,
+      decoration: InputDecoration(
+        hintText: hint,
+        filled: true,
+        fillColor: Colors.white,
+        border: const OutlineInputBorder(
+          borderSide: BorderSide.none,
+        ),
+      ),
+      style: const TextStyle(color: Colors.black),
+      keyboardType: TextInputType.number,
+      onChanged: (_) => calculate(),
+    );
+  }
+
+  Widget _buildDistanceSection() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text('Distance', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+            Text('km', style: TextStyle(fontSize: 14)),
+          ],
+        ),
+        SizedBox(
+          width: 220,
+          height: 40,
+          child: TextField(
+            controller: distanceController,
+            textAlign: TextAlign.center,
+            decoration: const InputDecoration(
+              hintText: '0',
+              contentPadding: EdgeInsets.symmetric(vertical: 10),
+              filled: true,
+              fillColor: Colors.white,
+              border: OutlineInputBorder(
+                borderSide: BorderSide.none,
+                borderRadius: BorderRadius.all(Radius.circular(8)),
+              ),
+            ),
+            style: const TextStyle(color: Colors.black, fontSize: 16),
+            keyboardType: TextInputType.number,
+            onChanged: (_) => calculate(),
+          ),
+        ),
+      ],
+    );
+  }
+
+  Widget _buildPaceSection() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text(
+              'Pace',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+            ),
+            Text(
+              'min/100m',
+              style: TextStyle(fontSize: 14, color: Colors.black),
+            ),
+          ],
+        ),
+        Row(
+          children: [
+            _buildResultBox(paceMinutes, width: 108),
+            const SizedBox(width: 4),
+            _buildResultBox(paceSeconds, width: 108),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildSpeedSection() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            Text(
+              'Speed',
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.black),
+            ),
+            Text(
+              'km/hr',
+              style: TextStyle(fontSize: 14, color: Colors.black),
+            ),
+          ],
+        ),
+        _buildResultBox(speed, width: 220),
+      ],
+    );
+  }
+
+  Widget _buildResultBox(String value, {double width = 50}) {
+    return Container(
+      width: width,
+      padding: const EdgeInsets.all(8),
+      color: Colors.white,
+      child: Text(
+        value,
+        style: const TextStyle(fontSize: 14, color: Colors.black),
+        textAlign: TextAlign.center,
+      ),
+    );
+  }
+
+  Widget _buildIconButtons() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: [
+        IconButton(
+          icon: const Icon(Icons.person),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+          },
+        ),
+        IconButton(
+          icon: const Icon(Icons.help),
+          onPressed: () {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => HelpPage()));
+          },
+        ),
+        IconButton(
+        icon: const Icon(Icons.save),
+        onPressed: _showSavesPage, // Chame o método aqui
+      ),
+        IconButton(
+          icon: const Icon(Icons.logout),
+          onPressed: _logout,
+        ),
+      ],
+    );
+  }
 }
