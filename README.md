@@ -1,16 +1,5 @@
-# swimcalculatorapp
+# Swim Calculator Pace
 
-A new Flutter project.
+O Swim Calculator é um aplicativo desenvolvido em Flutter para ajudar nadadores e entusiastas do esporte a acompanhar e otimizar seus treinos. Ele permite calcular automaticamente o ritmo (pace) e a velocidade com base na distância e no tempo inseridos, fornecendo métricas precisas para monitoramento de desempenho.
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Ideal para quem busca melhorar sua performance na água, com simplicidade e eficiência!
