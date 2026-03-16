@@ -1,26 +1,35 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart'; // Importar o provider
-import 'package:swimcalculator/swimcalculatoapp.dart';
+import 'package:swimcalculator/home/home_view.dart';
+import 'package:swimcalculator/login/login_view.dart';
+import 'package:swimcalculator/register/register_view.dart';
+
 void main() {
-  runApp(SwimCalculatorApp());
+  runApp(const SwimCalculatorApp());
 }
 
 class SwimCalculatorApp extends StatelessWidget {
+  const SwimCalculatorApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Colors.blue, // Define a cor primária como azul
+        primaryColor: Colors.blue,
         appBarTheme: const AppBarTheme(
-          backgroundColor: Colors.blue, // AppBar azul
+          backgroundColor: Colors.blue,
           titleTextStyle: TextStyle(
-            color: Colors.white, // Título branco no AppBar
+            color: Colors.white,
             fontSize: 20,
           ),
         ),
       ),
-      home: SwimCalculatorPage(),
+      initialRoute: '/login',
+      routes: {
+        '/login': (context) => const LoginView(),
+        '/register': (context) => const RegisterView(),
+        '/home': (context) => SwimCalculatorPage(),
+      },
     );
   }
 }

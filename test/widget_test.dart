@@ -7,13 +7,14 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:swimcalculator/main.dart';
 
-import 'package:swimcalculatorapp/main.dart';
+
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
-    await tester.pumpWidget(const MyApp());
+    await tester.pumpWidget(SwimCalculatorApp());
 
     // Verify that our counter starts at 0.
     expect(find.text('0'), findsOneWidget);

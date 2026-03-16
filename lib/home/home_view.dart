@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'profile_page.dart';
-import 'help_page.dart';
-import 'saves_page.dart';
+import '../profile/profile_view.dart';
+import '../help/help_view.dart';
+import '../save/save_view.dart';
 
 class SwimCalculatorPage extends StatefulWidget {
   @override
