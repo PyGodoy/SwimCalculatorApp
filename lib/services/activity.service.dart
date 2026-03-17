@@ -40,6 +40,7 @@ class ActivityService {
       );
       return response.data;
     } catch (e) {
+      print('erro detalhado: $e');
       throw Exception("Erro ao salvar dados");
     }
   }

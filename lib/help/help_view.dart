@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:swimcalculator/shared/widgets/app_button_nav_bar.dart';
 
-class HelpPage extends StatelessWidget {
-  const HelpPage({Key? key}) : super(key: key);
+class HelpView extends StatelessWidget {
+  const HelpView({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,6 +44,25 @@ class HelpPage extends StatelessWidget {
                 'Todos os dados salvos permanecem disponíveis mesmo após o fechamento do aplicativo, garantindo que nenhuma informação seja perdida.',
           ),
         ],
+      ),
+      bottomNavigationBar: ButtonNavBar(
+        indiceAtual: 3,
+        onTap: (indice) {
+          switch(indice) {
+            case 0:
+              Navigator.pushNamed(context, '/home');
+              break;
+            case 1:
+              Navigator.pushNamed(context, '/save');
+              break;
+            case 2:
+              Navigator.pushNamed(context, '/profile');
+              break;
+            case 3:
+              Navigator.pushNamed(context, '/help');
+              break;
+          }
+        }
       ),
     );
   }

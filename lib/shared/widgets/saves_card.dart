@@ -32,7 +32,7 @@ class SavesCard extends StatelessWidget{
             padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
             decoration: const BoxDecoration(
               gradient: LinearGradient(
-                colors: [Color(0xFF00C6FF), Color(0xFF1A6BFF)],
+                colors: [Color(0xFF1A6BFF), Color(0xFF1A6BFF)],
                 begin: Alignment.centerLeft,
                 end: Alignment.centerRight,
               ),
@@ -76,9 +76,10 @@ class SavesCard extends StatelessWidget{
                   children: [
                     Expanded(
                       child: Container(
+                        padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: const Color.fromARGB(47, 0, 200, 255),
+                          color: Color.fromARGB(59, 26, 106, 255),
                         ),
                         child: Column(
                           children: [
@@ -91,8 +92,9 @@ class SavesCard extends StatelessWidget{
                             Text(
                               save.pace,
                               style: const TextStyle(
-                                color:  Color.fromARGB(255, 20, 94, 114),
-                                fontSize: 18
+                                color:  Color(0xFF1A6BFF),
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                             const Text(
@@ -108,9 +110,10 @@ class SavesCard extends StatelessWidget{
                     const SizedBox(width: 24,),
                     Expanded(
                       child: Container(
+                        padding: const EdgeInsets.all(12),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12),
-                          color: const Color.fromARGB(50, 26, 106, 255),
+                          color: Color.fromARGB(59, 26, 106, 255),
                         ),
                         child: Column(
                           children: [
@@ -124,7 +127,8 @@ class SavesCard extends StatelessWidget{
                               save.speed,
                               style: const TextStyle(
                                 color:  Color(0xFF1A6BFF),
-                                fontSize: 18
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
                               ),
                             ),
                             const Text(
@@ -147,13 +151,12 @@ class SavesCard extends StatelessWidget{
                 ),
                 SizedBox(height: 12,),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Icon(Icons.straighten_outlined, color: const Color.fromARGB(255, 26, 171, 255)),
-                    
-                    Text(save.distance),
+                    Icon(Icons.straighten_outlined, color: Color(0xFF1A6BFF)),
+                    Text('${save.distance} km'),
                     SizedBox(width: 24,),
-                    Icon(Icons.timer_outlined, color: const Color.fromARGB(255, 26, 171, 255)),
+                    Icon(Icons.timer_outlined, color: Color(0xFF1A6BFF)),
                     Text(save.time),
                     SizedBox(width: 24,),
                     Icon(Icons.date_range_outlined, color: Colors.grey),

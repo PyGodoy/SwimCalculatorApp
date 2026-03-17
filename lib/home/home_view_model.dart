@@ -45,6 +45,7 @@ class HomeViewModel extends ChangeNotifier{
   }
 
   Future<void>saveActivity(String title) async {
+    print('salvando: $title');
     try {
       await _activityService.postSaves(
         title,
@@ -53,6 +54,7 @@ class HomeViewModel extends ChangeNotifier{
         '$paceMinutes:$paceSeconds',
         speed,
       );
+      print('salvo com sucesso');
       hoursController.clear();
       minutesController.clear();
       secondsController.clear();
@@ -63,6 +65,7 @@ class HomeViewModel extends ChangeNotifier{
       canSave = false;
       notifyListeners();
     } catch (e) {
+      print('erro: $e');
       errorMessage = "Erro ao salvar dados";
       notifyListeners();
     }

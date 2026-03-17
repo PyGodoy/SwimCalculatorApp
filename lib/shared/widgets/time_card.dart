@@ -33,10 +33,14 @@ class TimeCard extends StatelessWidget{
             hintText: '00',
             filled: true,
             fillColor: Colors.white,
-            border: OutlineInputBorder(
+            enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
-              borderSide: BorderSide.none,
-            )
+              borderSide: BorderSide(color: Colors.grey.withOpacity(0.3), width: 1),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(8),
+              borderSide: const BorderSide(color: Color(0xFF1A6BFF), width: 1),
+            ),
           ),
         ),
       ],

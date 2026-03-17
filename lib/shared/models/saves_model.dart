@@ -26,6 +26,12 @@ class SavesModel {
   time: json['time'],
   pace: json['pace'],
   speed: json['speed'],
-  createdAt: json['created_at'],
+  createdAt: _formatDate(json['created_at']),
 );
+
+static String _formatDate(String isoDate) {
+  final date = DateTime.parse(isoDate);
+  return '${date.day.toString().padLeft(2, '0')}/${date.month.toString().padLeft(2, '0')}/${date.year}';
+}
+
 }
