@@ -46,7 +46,7 @@ class _RegisterView extends StatelessWidget {
                       ),
                       const SizedBox(height: 24),
                       const Text(
-                        'Create\nAccount',
+                        'Crie sua\nConta',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 36,

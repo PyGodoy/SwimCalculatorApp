@@ -28,7 +28,7 @@ class SwimCalculatorApp extends StatelessWidget {
       routes: {
         '/login': (context) => const LoginView(),
         '/register': (context) => const RegisterView(),
-        '/home': (context) => SwimCalculatorPage(),
+        '/home': (context) => const HomeView(),
       },
     );
   }
