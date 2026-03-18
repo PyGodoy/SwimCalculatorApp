@@ -50,7 +50,7 @@ class ResultCard extends StatelessWidget {
                 Icon(Icons.grid_view_outlined, color: Colors.white),
                 SizedBox(width: 8),
                 Text(
-                  'Resultado',
+                  'Result',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 18,
@@ -118,7 +118,7 @@ class ResultCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 16),
                 AppButton(
-                  text: 'Salvar',
+                  text: 'Save',
                   icon: Icons.save_alt_outlined,
                   onPressed: onSave,
                 ),

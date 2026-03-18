@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:swimcalculator/home/home_view_model.dart';
-import 'package:swimcalculator/shared/widgets/app_button.dart';
 import 'package:swimcalculator/shared/widgets/app_button_nav_bar.dart';
 import 'package:swimcalculator/shared/widgets/result_card.dart';
 import 'package:swimcalculator/shared/widgets/time_card.dart';
@@ -25,7 +24,6 @@ class _HomeView extends StatelessWidget{
   
   @override
   Widget build(BuildContext context) {
-    int _indiceSelecionado = 0; 
     final vm = context.watch<HomeViewModel>();
     return Scaffold(
       appBar: AppBar(title: Text('Swim Pace')),
@@ -67,7 +65,7 @@ class _HomeView extends StatelessWidget{
                       Icon(Icons.timer_sharp, color: Colors.white),
                       SizedBox(width: 8),
                       Text(
-                        'Tempo',
+                        'Time',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 18,
@@ -119,7 +117,7 @@ class _HomeView extends StatelessWidget{
                               Icon(Icons.straighten_outlined, color: Color(0xFF1A6BFF)),
                               SizedBox(width: 8),
                               Text(
-                                'Distância (km)',
+                                'Distance (km)',
                                 style: TextStyle(color: Color.fromARGB(255, 80, 80, 80), fontSize: 14),
                               ),
                             ],
@@ -159,7 +157,7 @@ class _HomeView extends StatelessWidget{
               showDialog(
                 context: context, 
                 builder: (_)=> AlertDialog(
-                  title: const Text("Digite o Título"),
+                  title: const Text("Enter the title"),
                   content: TextField(
                     controller: titleController,
                     decoration: const InputDecoration(hintText: 'Ex: Campeonato Brasileiro'),
@@ -167,7 +165,7 @@ class _HomeView extends StatelessWidget{
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
-                      child: const Text("Cancelar"),
+                      child: const Text("Cancel"),
                     ),
                     TextButton(
                       onPressed: () {
@@ -176,7 +174,7 @@ class _HomeView extends StatelessWidget{
                           Navigator.pop(context);
                         }
                       }, 
-                      child: const Text("Salvar")
+                      child: const Text("Save")
                     ),
                   ],
                 )
