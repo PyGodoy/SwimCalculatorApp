@@ -41,7 +41,7 @@ class _LoginView extends StatelessWidget {
                       Icon(Icons.arrow_back, color: Colors.white),
                       SizedBox(height: 40),
                       Text(
-                        'Bem-Vindo\nAo SwimPace',
+                        'Bem-Vindo\nAo Swim Pace',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 36,
@@ -105,9 +105,16 @@ class _LoginView extends StatelessWidget {
                         style: TextStyle(color: Colors.grey[600], fontSize: 13)),
                   ),
                   const SizedBox(height: 10),
+                  
                   if (vm.errorMessage != null) 
-                    Text(vm.errorMessage!, style: const TextStyle(color: Colors.red),),
-                    const SizedBox(height: 32,),
+                    Text(
+                      vm.errorMessage!, 
+                      style: const TextStyle(
+                        color: Colors.red
+                      )
+                    ),
+                  
+                  const SizedBox(height: 32,),
 
                   SizedBox(
                     width: double.infinity,
