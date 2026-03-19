@@ -65,7 +65,7 @@ class _HomeView extends StatelessWidget{
                       Icon(Icons.timer_sharp, color: Colors.white),
                       SizedBox(width: 8),
                       Text(
-                        'Time',
+                        'Tempo',
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: 18,
@@ -86,7 +86,7 @@ class _HomeView extends StatelessWidget{
                           Expanded(
                             child: TimeCard(
                               controller: vm.hoursController,
-                              label: 'Hours',
+                              label: 'Horas',
                               onChanged: () => context.read<HomeViewModel>().calculate(),
                             ),
                           ),
@@ -94,7 +94,7 @@ class _HomeView extends StatelessWidget{
                           Expanded(
                             child: TimeCard(
                               controller: vm.minutesController,
-                              label: 'Minutes',
+                              label: 'Minutos',
                               onChanged: () => context.read<HomeViewModel>().calculate(),
                             ),
                           ),
@@ -102,7 +102,7 @@ class _HomeView extends StatelessWidget{
                           Expanded(
                             child: TimeCard(
                               controller: vm.secondsController,
-                              label: 'Seconds',
+                              label: 'Segundos',
                               onChanged: () => context.read<HomeViewModel>().calculate(),
                             ),
                           ),
@@ -117,7 +117,7 @@ class _HomeView extends StatelessWidget{
                               Icon(Icons.straighten_outlined, color: Color(0xFF1A6BFF)),
                               SizedBox(width: 8),
                               Text(
-                                'Distance (km)',
+                                'Distância (km)',
                                 style: TextStyle(color: Color.fromARGB(255, 80, 80, 80), fontSize: 14),
                               ),
                             ],
@@ -157,7 +157,7 @@ class _HomeView extends StatelessWidget{
               showDialog(
                 context: context, 
                 builder: (_)=> AlertDialog(
-                  title: const Text("Enter the title"),
+                  title: const Text("Insira um título"),
                   content: TextField(
                     controller: titleController,
                     decoration: const InputDecoration(hintText: 'Ex: Campeonato Brasileiro'),
@@ -165,7 +165,7 @@ class _HomeView extends StatelessWidget{
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
-                      child: const Text("Cancel"),
+                      child: const Text("Cancelar"),
                     ),
                     TextButton(
                       onPressed: () {
@@ -174,7 +174,7 @@ class _HomeView extends StatelessWidget{
                           Navigator.pop(context);
                         }
                       }, 
-                      child: const Text("Save")
+                      child: const Text("Salvar")
                     ),
                   ],
                 )

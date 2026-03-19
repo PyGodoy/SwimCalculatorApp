@@ -27,7 +27,7 @@ class _RegisterView extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          // Onda azul
+
           ClipPath(
             clipper: WaveClipper(),
             child: Container(
@@ -68,7 +68,6 @@ class _RegisterView extends StatelessWidget {
                 children: [
                   const SizedBox(height: 16),
 
-                  // Nome
                   TextField(
                     controller: vm.nameController,
                     decoration: const InputDecoration(
@@ -85,7 +84,6 @@ class _RegisterView extends StatelessWidget {
 
                   const SizedBox(height: 20),
 
-                  // Email
                   TextField(
                     controller: vm.emailController,
                     decoration: const InputDecoration(
@@ -102,7 +100,6 @@ class _RegisterView extends StatelessWidget {
 
                   const SizedBox(height: 20),
 
-                  // Senha
                   TextField(
                     controller: vm.passwordController,
                     obscureText: vm.obscurePassword,
@@ -127,7 +124,6 @@ class _RegisterView extends StatelessWidget {
 
                   const SizedBox(height: 20),
 
-                  // Confirmar senha
                   TextField(
                     controller: vm.confirmPasswordController,
                     obscureText: vm.obscureConfirmPassword,
@@ -152,16 +148,13 @@ class _RegisterView extends StatelessWidget {
 
                   const SizedBox(height: 12),
 
-                  // Erro
                   if (vm.errorMessage != null)
                     Text(
                       vm.errorMessage!,
                       style: const TextStyle(color: Colors.red, fontSize: 13),
                     ),
-
                   const SizedBox(height: 32),
 
-                  // Botão Register
                   SizedBox(
                     width: double.infinity,
                     height: 50,
@@ -184,7 +177,6 @@ class _RegisterView extends StatelessWidget {
 
                   const SizedBox(height: 16),
 
-                  // Já tem conta
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -202,7 +194,6 @@ class _RegisterView extends StatelessWidget {
                       ),
                     ],
                   ),
-
                   const SizedBox(height: 24),
                 ],
               ),

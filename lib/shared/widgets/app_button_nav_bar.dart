@@ -24,19 +24,19 @@ class ButtonNavBar extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(
           icon: Icon(Icons.home_filled) ,
-          label: "Home"
+          label: "Ínicio"
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.history) ,
-          label: "History"
+          label: "Historico"
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.person_2) ,
-          label: "Profile"
+          label: "Perfil"
         ),
         BottomNavigationBarItem(
           icon: Icon(Icons.help) ,
-          label: "Help"
+          label: "Ajuda"
         ),
       ],
     );

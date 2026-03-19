@@ -26,7 +26,6 @@ class _LoginView extends StatelessWidget {
       backgroundColor: Colors.white,
       body: Column(
         children: [
-          // Onda azul
           ClipPath(
             clipper: WaveClipper(),
             child: Container(
@@ -56,14 +55,13 @@ class _LoginView extends StatelessWidget {
             ),
           ),
 
-          // Formulário
           Expanded(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 28),
               child: Column(
                 children: [
                   const SizedBox(height: 16),
-                  // Email
+
                   TextField(
                     controller: vm.emailController,
                     decoration: const InputDecoration(
@@ -78,12 +76,12 @@ class _LoginView extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 20),
-                  // Senha
+
                   TextField(
                     controller: vm.passwordController,
                     obscureText: vm.obscurePassword,
                     decoration: InputDecoration(
-                      hintText: 'Password',
+                      hintText: 'Senha',
                       prefixIcon: const Icon(Icons.lock_outline, color: Colors.grey),
                       suffixIcon: IconButton(
                         icon: Icon(
@@ -103,11 +101,14 @@ class _LoginView extends StatelessWidget {
                   const SizedBox(height: 8),
                   Align(
                     alignment: Alignment.centerRight,
-                    child: Text('Forgot password?',
+                    child: Text('Esqueceu sua senha?',
                         style: TextStyle(color: Colors.grey[600], fontSize: 13)),
                   ),
-                  const SizedBox(height: 32),
-                  // Botão Login
+                  const SizedBox(height: 10),
+                  if (vm.errorMessage != null) 
+                    Text(vm.errorMessage!, style: const TextStyle(color: Colors.red),),
+                    const SizedBox(height: 32,),
+
                   SizedBox(
                     width: double.infinity,
                     height: 50,
@@ -121,13 +122,13 @@ class _LoginView extends StatelessWidget {
                       ),
                       child: vm.isLoading
                           ? const CircularProgressIndicator(color: Colors.white)
-                          : const Text('Log in', style: TextStyle(fontSize: 16, color: Colors.white)),
+                          : const Text('Entrar', style: TextStyle(fontSize: 16, color: Colors.white)),
                     ),
                   ),
                   const SizedBox(height: 16),
                   Text('or', style: TextStyle(color: Colors.grey[500])),
                   const SizedBox(height: 16),
-                  // Botão Sign up
+
                   SizedBox(
                     width: double.infinity,
                     height: 50,
@@ -141,7 +142,7 @@ class _LoginView extends StatelessWidget {
                         ),
                         side: const BorderSide(color: Colors.grey),
                       ),
-                      child: const Text('Sign up',
+                      child: const Text('Cadastrar',
                           style: TextStyle(color: Colors.black87, fontSize: 16)),
                     ),
                   ),

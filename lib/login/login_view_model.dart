@@ -42,10 +42,16 @@ class LoginViewModel extends ChangeNotifier{
       await _authService.login(email, password);
       if (context.mounted) {
         Navigator.pushNamed(context, "/home");
+        limpaErro();
       }
     } catch (e) {
       errorMessage = "Usuario e senha incorretos";
+      notifyListeners();
+      isLoading = false;
     }
+
+    isLoading = false;
+    notifyListeners();
   }
   // dipose
   @override

@@ -118,7 +118,7 @@ class SavesCard extends StatelessWidget{
                         child: Column(
                           children: [
                             const Text(
-                              "Speed",
+                              "Velocidade",
                               style: TextStyle(
                                 fontSize: 14,
                               ),

@@ -25,7 +25,7 @@ class _ProfileView extends StatelessWidget {
     final vm = context.watch<ProfileViewModel>();
 
     return Scaffold(
-      appBar: AppBar(title: const Text("Profile")),
+      appBar: AppBar(title: const Text("Perfil")),
       body: vm.isLoading
       ? const Center(child: CircularProgressIndicator(color: Color(0xFF1A6BFF),),)
       : Center(
@@ -48,7 +48,7 @@ class _ProfileView extends StatelessWidget {
             ),
             SizedBox(height: 10,),
             Text(
-              vm.profile?.name ?? 'Not Found',
+              vm.profile?.name ?? 'Não encontrado',
               style: const TextStyle(
                 color: Colors.black,
                 fontSize: 18,
@@ -56,7 +56,7 @@ class _ProfileView extends StatelessWidget {
               ),
             ),
             Text(
-              vm.profile?.email ?? 'Email Not Found',
+              vm.profile?.email ?? 'Email não encontrado',
               style: const TextStyle(
                 color: Colors.grey,
                 fontSize: 14,
@@ -74,7 +74,7 @@ class _ProfileView extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const Text(
-                    "Account Information",
+                    "Informações da Conta",
                     style: TextStyle(
                       color: Colors.grey,
                       fontSize: 14,
@@ -95,8 +95,8 @@ class _ProfileView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text("Name", style: TextStyle(color: Colors.grey)),
-                          Text(vm.profile?.name ?? "Not Found"),
+                          const Text("Nome", style: TextStyle(color: Colors.grey)),
+                          Text(vm.profile?.name ?? "Não encontrado"),
                         ],
                       )
                     ],
@@ -117,7 +117,7 @@ class _ProfileView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text("Email", style: TextStyle(color: Colors.grey)),
-                          Text(vm.profile?.email ?? "Not Found"),
+                          Text(vm.profile?.email ?? "Não encontrado"),
                         ],
                       )
                     ],
@@ -137,8 +137,8 @@ class _ProfileView extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          const Text("Account created in", style: TextStyle(color: Colors.grey)),
-                          Text(vm.profile?.createdAt ?? "Not Found"),
+                          const Text("Conta criada em", style: TextStyle(color: Colors.grey)),
+                          Text(vm.profile?.createdAt ?? "Não encontrado"),
                         ],
                       )
                     ],
@@ -149,7 +149,7 @@ class _ProfileView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(12),
               child: AppButton(
-                text: "Edit Profile", 
+                text: "Editar Perfil", 
                 icon: Icons.mode_edit_outlined, 
                 onPressed:() {
                         
@@ -158,9 +158,7 @@ class _ProfileView extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(12),
               child: ElevatedButton(
-                onPressed:() {
-                  
-                },
+                onPressed:() => Navigator.pushNamed(context, "/login"),
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadiusGeometry.circular(12),
@@ -174,7 +172,7 @@ class _ProfileView extends StatelessWidget {
                     Icon(Icons.logout, color: Colors.red,),
                     SizedBox(width: 8,),
                     Text(
-                      "Logout",
+                      "Sair",
                       style: TextStyle(
                         color: Colors.red,
                         fontSize: 18,

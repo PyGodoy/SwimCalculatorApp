@@ -25,7 +25,7 @@ class _SaveView extends StatelessWidget {
     final vm = context.watch<SaveViewModel>();
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Saves')),
+      appBar: AppBar(title: const Text('Histórico')),
       body: vm.isLoading
     ? const Center(child: CircularProgressIndicator(color: Color(0xFF1A6BFF),))
     : ListView.builder(
