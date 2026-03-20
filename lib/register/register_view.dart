@@ -104,7 +104,7 @@ class _RegisterView extends StatelessWidget {
                     controller: vm.passwordController,
                     obscureText: vm.obscurePassword,
                     decoration: InputDecoration(
-                      hintText: 'Password',
+                      hintText: 'Senha',
                       prefixIcon: const Icon(Icons.lock_outline, color: Colors.grey),
                       suffixIcon: IconButton(
                         icon: Icon(
@@ -128,7 +128,7 @@ class _RegisterView extends StatelessWidget {
                     controller: vm.confirmPasswordController,
                     obscureText: vm.obscureConfirmPassword,
                     decoration: InputDecoration(
-                      hintText: 'Confirm Password',
+                      hintText: 'Confirmar Senha',
                       prefixIcon: const Icon(Icons.lock_outline, color: Colors.grey),
                       suffixIcon: IconButton(
                         icon: Icon(
@@ -170,7 +170,7 @@ class _RegisterView extends StatelessWidget {
                       ),
                       child: vm.isLoading
                           ? const CircularProgressIndicator(color: Colors.white)
-                          : const Text('Sign up',
+                          : const Text('Cadastrar',
                               style: TextStyle(fontSize: 16, color: Colors.white)),
                     ),
                   ),
@@ -180,12 +180,12 @@ class _RegisterView extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Text('Already have an account? ',
+                      Text('Já tem uma conta? ',
                           style: TextStyle(color: Colors.grey[600])),
                       GestureDetector(
                         onTap: () => Navigator.pushNamed(context, '/login'),
                         child: const Text(
-                          'Log in',
+                          'Entrar',
                           style: TextStyle(
                             color: Color(0xFF1A6BFF),
                             fontWeight: FontWeight.bold,

@@ -133,7 +133,7 @@ class _LoginView extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 16),
-                  Text('or', style: TextStyle(color: Colors.grey[500])),
+                  Text('ou', style: TextStyle(color: Colors.grey[500])),
                   const SizedBox(height: 16),
 
                   SizedBox(
