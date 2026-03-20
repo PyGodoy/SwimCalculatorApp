@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:swimcalculator/help/help_view.dart';
 import 'package:swimcalculator/home/home_view.dart';
 import 'package:swimcalculator/login/login_view.dart';
+import 'package:swimcalculator/profile/editProfile/editprofile_view.dart';
 import 'package:swimcalculator/profile/profile_view.dart';
 import 'package:swimcalculator/register/register_view.dart';
 import 'package:swimcalculator/save/save_view.dart';
@@ -35,6 +36,7 @@ class SwimCalculatorApp extends StatelessWidget {
         '/save': (context) => const SaveView(),
         '/help': (context) => const HelpView(),
         '/profile': (context) => const ProfileView(),
+        '/edit-profile': (context) => EditprofileView(),
       },
     );
   }

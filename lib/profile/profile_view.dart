@@ -151,9 +151,10 @@ class _ProfileView extends StatelessWidget {
               child: AppButton(
                 text: "Editar Perfil", 
                 icon: Icons.mode_edit_outlined, 
-                onPressed:() {
-                        
-              },),
+                onPressed:() => Navigator.pushNamed(context, '/edit-profile').then((_) {
+                  vm.getProfile();
+                }),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(12),
