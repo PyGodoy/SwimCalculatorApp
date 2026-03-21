@@ -3,7 +3,7 @@ import 'package:swimcalculator/services/auth.service.dart';
 
 class ProfileService {
   final Dio _dio = Dio();
-  final String baseUrl = 'http://192.168.68.106:7000/api';
+  final String baseUrl = 'https://swimpace-backend.vercel.app/api';
   final AuthService _authService = AuthService();
   
   Future<dynamic>getProfile() async {

@@ -19,6 +19,9 @@ class SwimCalculatorApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        textSelectionTheme: const TextSelectionThemeData(
+          cursorColor: Color(0xFF1A6BFF)
+        ),
         primaryColor: Color(0xFF1A6BFF),
         appBarTheme: const AppBarTheme(
           backgroundColor: Color(0xFF1A6BFF),

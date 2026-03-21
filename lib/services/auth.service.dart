@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class AuthService {
   final Dio _dio = Dio();
-  final String baseUrl = 'http://192.168.68.106:7000/api';
+  final String baseUrl = 'https://swimpace-backend.vercel.app/api';
 
 
   Future<dynamic>register(String name, String email, String password) async {

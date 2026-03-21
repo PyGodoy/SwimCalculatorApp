@@ -160,12 +160,25 @@ class _HomeView extends StatelessWidget{
                   title: const Text("Insira um título"),
                   content: TextField(
                     controller: titleController,
-                    decoration: const InputDecoration(hintText: 'Ex: Campeonato Brasileiro'),
+                    decoration: const InputDecoration(
+                      hintText: 'Ex: Campeonato Brasileiro',
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFF1A6BFF))
+                      ),
+                      focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Color(0xFF1A6BFF))
+                      ),
+                    ),
                   ),
                   actions: [
                     TextButton(
                       onPressed: () => Navigator.pop(context),
-                      child: const Text("Cancelar"),
+                      child: const Text(
+                        "Cancelar",
+                        style: TextStyle(
+                          color: Colors.red,
+                        ),
+                      ),
                     ),
                     TextButton(
                       onPressed: () {
@@ -174,7 +187,12 @@ class _HomeView extends StatelessWidget{
                           Navigator.pop(context);
                         }
                       }, 
-                      child: const Text("Salvar")
+                      child: const Text(
+                        "Salvar",
+                        style: TextStyle(
+                          color: Color(0xFF1A6BFF)
+                        ),
+                      ),
                     ),
                   ],
                 )
