@@ -6,8 +6,11 @@ import 'package:swimcalculator/profile/editProfile/editprofile_view.dart';
 import 'package:swimcalculator/profile/profile_view.dart';
 import 'package:swimcalculator/register/register_view.dart';
 import 'package:swimcalculator/save/save_view.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(const SwimCalculatorApp());
 }
 

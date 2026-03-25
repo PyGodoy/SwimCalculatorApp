@@ -42,6 +42,23 @@ class AuthService {
     }
   }
 
+  Future<void>loginWithGoogle(String name, String email) async {
+    try {
+      final response = await _dio.post(
+        '$baseUrl/auth/google',
+        data: {
+          'name' : name,
+          'email' : email
+        },
+      );
+      final token = response.data['token'];
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.setString('token', token);
+    } catch (e) {
+      throw Exception("Erro ao logar com google");
+    }
+  }
+
   Future<String?> getToken() async {
     final prefs = await SharedPreferences.getInstance();
     return prefs.getString('token');

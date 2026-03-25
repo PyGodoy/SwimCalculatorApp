@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "965709500100",
+    "project_id": "swimpace-7f2f6",
+    "storage_bucket": "swimpace-7f2f6.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:965709500100:android:2aabe62bc99c61468b4391",
+        "android_client_info": {
+          "package_name": "com.example.swimcalculatorapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "965709500100-se0v09d9k2ica5pvqikaics7giaevgtk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.swimcalculatorapp",
+            "certificate_hash": "4412f632c58bc53fc4dfa5eba845b2bf0f06c322"
+          }
+        },
+        {
+          "client_id": "965709500100-ofrpcgu7tjhf2unlobss1ta8i9g7fnfc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDY-nrckwUUiPBPNHS_td4IKfPRvDh5mNM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "965709500100-ofrpcgu7tjhf2unlobss1ta8i9g7fnfc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

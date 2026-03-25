@@ -139,6 +139,39 @@ class _LoginView extends StatelessWidget {
                   SizedBox(
                     width: double.infinity,
                     height: 50,
+                    child: ElevatedButton(
+                      onPressed: vm.isLoading ? null : () => context.read<LoginViewModel>().loginWithGoogle(context),
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.white,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadiusGeometry.circular(30)
+                        ),
+                        side: const BorderSide(color: Colors.grey),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset('assets/images/google.png', width: 24,),
+                          SizedBox(width: 5,),
+                          const Text(
+                            "Entrar com Google", 
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 16
+                            ),
+                          ),
+                        ],
+                      )
+                    ),
+                  ),
+
+                  const SizedBox(height: 16),
+                  Text('ou', style: TextStyle(color: Colors.grey[500])),
+                  const SizedBox(height: 16),
+
+                  SizedBox(
+                    width: double.infinity,
+                    height: 50,
                     child: OutlinedButton(
                       onPressed: () {
                         Navigator.of(context).pushNamed('/register');

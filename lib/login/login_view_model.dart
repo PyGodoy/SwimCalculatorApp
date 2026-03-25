@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:swimcalculator/services/auth.service.dart';
+import 'package:swimcalculator/services/google_auth.service.dart';
 
 class LoginViewModel extends ChangeNotifier{
   final _authService = AuthService();
@@ -53,6 +54,27 @@ class LoginViewModel extends ChangeNotifier{
     isLoading = false;
     notifyListeners();
   }
+
+  Future<void> loginWithGoogle (BuildContext context) async {
+    isLoading = true;
+    notifyListeners();
+
+    try {
+      final _googleAuthService = GoogleAuthService();
+      await _googleAuthService.signInWithGoogle();
+
+      if (context.mounted) {
+        Navigator.pushNamed(context, '/home');
+      }
+    } catch (e) {
+      errorMessage = e.toString();
+      notifyListeners();
+    }
+
+    isLoading = false;
+    notifyListeners();
+  }
+
   // dipose
   @override
   void dispose() {
