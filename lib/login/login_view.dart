@@ -24,39 +24,40 @@ class _LoginView extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      body: Column(
-        children: [
-          ClipPath(
-            clipper: WaveClipper(),
-            child: Container(
-              height: 320,
-              width: double.infinity,
-              color: const Color(0xFF1A6BFF),
-              child: SafeArea(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 20),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [
-                      Icon(Icons.arrow_back, color: Colors.white),
-                      SizedBox(height: 40),
-                      Text(
-                        'Bem-Vindo\nAo Swim Pace',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 36,
-                          fontWeight: FontWeight.bold,
+      body: SingleChildScrollView(
+        keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
+        child: Column(
+          children: [
+            ClipPath(
+              clipper: WaveClipper(),
+              child: Container(
+                height: 320,
+                width: double.infinity,
+                color: const Color(0xFF1A6BFF),
+                child: SafeArea(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Icon(Icons.arrow_back, color: Colors.white),
+                        SizedBox(height: 40),
+                        Text(
+                          'Bem-Vindo\nAo Swim Pace',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 36,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
 
-          Expanded(
-            child: Padding(
+            Padding(
               padding: const EdgeInsets.symmetric(horizontal: 28),
               child: Column(
                 children: [
@@ -99,28 +100,31 @@ class _LoginView extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
+
                   Align(
                     alignment: Alignment.centerRight,
-                    child: Text('Esqueceu sua senha?',
-                        style: TextStyle(color: Colors.grey[600], fontSize: 13)),
+                    child: Text(
+                      'Esqueceu sua senha?',
+                      style: TextStyle(color: Colors.grey[600], fontSize: 13),
+                    ),
                   ),
                   const SizedBox(height: 10),
-                  
-                  if (vm.errorMessage != null) 
+
+                  if (vm.errorMessage != null)
                     Text(
-                      vm.errorMessage!, 
-                      style: const TextStyle(
-                        color: Colors.red
-                      )
+                      vm.errorMessage!,
+                      style: const TextStyle(color: Colors.red),
                     ),
-                  
-                  const SizedBox(height: 32,),
+
+                  const SizedBox(height: 32),
 
                   SizedBox(
                     width: double.infinity,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: vm.isLoading ? null : () => context.read<LoginViewModel>().login(context),
+                      onPressed: vm.isLoading
+                          ? null
+                          : () => context.read<LoginViewModel>().login(context),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: const Color(0xFF1A6BFF),
                         shape: RoundedRectangleBorder(
@@ -129,7 +133,8 @@ class _LoginView extends StatelessWidget {
                       ),
                       child: vm.isLoading
                           ? const CircularProgressIndicator(color: Colors.white)
-                          : const Text('Entrar', style: TextStyle(fontSize: 16, color: Colors.white)),
+                          : const Text('Entrar',
+                              style: TextStyle(fontSize: 16, color: Colors.white)),
                     ),
                   ),
                   const SizedBox(height: 16),
@@ -140,31 +145,29 @@ class _LoginView extends StatelessWidget {
                     width: double.infinity,
                     height: 50,
                     child: ElevatedButton(
-                      onPressed: vm.isLoading ? null : () => context.read<LoginViewModel>().loginWithGoogle(context),
+                      onPressed: vm.isLoading
+                          ? null
+                          : () => context.read<LoginViewModel>().loginWithGoogle(context),
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.white,
                         shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadiusGeometry.circular(30)
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         side: const BorderSide(color: Colors.grey),
                       ),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Image.asset('assets/images/google.png', width: 24,),
-                          SizedBox(width: 5,),
+                          Image.asset('assets/images/google.png', width: 24),
+                          const SizedBox(width: 5),
                           const Text(
-                            "Entrar com Google", 
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 16
-                            ),
+                            "Entrar com Google",
+                            style: TextStyle(color: Colors.black, fontSize: 16),
                           ),
                         ],
-                      )
+                      ),
                     ),
                   ),
-
                   const SizedBox(height: 16),
                   Text('ou', style: TextStyle(color: Colors.grey[500])),
                   const SizedBox(height: 16),
@@ -173,9 +176,7 @@ class _LoginView extends StatelessWidget {
                     width: double.infinity,
                     height: 50,
                     child: OutlinedButton(
-                      onPressed: () {
-                        Navigator.of(context).pushNamed('/register');
-                      },
+                      onPressed: () => Navigator.of(context).pushNamed('/register'),
                       style: OutlinedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
@@ -186,11 +187,13 @@ class _LoginView extends StatelessWidget {
                           style: TextStyle(color: Colors.black87, fontSize: 16)),
                     ),
                   ),
+
+                  const SizedBox(height: 32),
                 ],
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
